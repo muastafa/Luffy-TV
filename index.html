@@ -1,252 +1,152 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NightRage TV - تحميل التطبيق</title>
 
-<title>NightRage TV</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-<script src="playerjs.js"></script>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
 
-<style>
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-body{
-margin:0;
-font-family:Arial;
-background:#000 url("https://e.top4top.io/p_38229y3981.jpg") center/cover fixed;
-}
+            padding: 30px 15px;
+        }
 
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.45);
-z-index:-1;
-}
+        .container {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
 
-.header{
-background:#111;
-padding:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+        .app-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 30px;
 
-.brand{
-display:flex;
-gap:12px;
-align-items:center;
-}
+            display: block;
+            margin: 0 auto 15px;
 
-.brand img{
-width:45px;
-height:45px;
-border-radius:50%;
-}
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+        }
 
-.brand span{
-color:white;
-font-size:28px;
-font-weight:900;
-}
+        .app-name {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 45px;
+            letter-spacing: 1px;
+        }
 
-.telegram-btn{
-width:45px;
-height:45px;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#1b1b1b;
-border-radius:50%;
-}
+        .download-box {
+            display: block;
+            width: 100%;
+            padding: 20px 15px;
+            margin: 18px 0;
 
-.telegram-btn img{
-width:25px;
-}
+            border-radius: 15px;
 
-.packages{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-padding:20px;
-}
+            text-decoration: none;
+            color: white;
 
-.package-card{
-background:rgba(255,255,255,.08);
-border-radius:20px;
-overflow:hidden;
-cursor:pointer;
-transition:.3s;
-}
+            font-size: 22px;
+            font-weight: bold;
 
-.package-card:hover{
-transform:scale(1.05);
-}
+            background: linear-gradient(135deg, #8b0000, #e00000);
 
-.package-card img{
-width:100%;
-}
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.25);
 
-.package-card h4{
-color:white;
-font-size:13px;
-text-align:center;
-}
+            transition: 0.25s ease;
+        }
 
-#playerBox{
-display:none;
-position:fixed;
-inset:0;
-background:black;
-z-index:99999;
-padding:10px;
-overflow:auto;
-}
+        .download-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(255, 0, 0, 0.4);
+        }
 
-#channelName{
-color:white;
-text-align:center;
-}
+        .download-box:active {
+            transform: scale(0.97);
+        }
 
-#serverSelect{
-width:100%;
-height:45px;
-background:#111;
-color:white;
-border:none;
-border-radius:12px;
-margin:10px 0;
-}
+        .download-box span {
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+            margin-top: 7px;
+            opacity: 0.85;
+        }
 
-.closeBtn{
-width:100%;
-height:50px;
-background:red;
-color:white;
-border:none;
-border-radius:15px;
-font-size:18px;
-}
-
-#player{
-width:100%;
-height:500px;
-}
-
-@media(max-width:700px){
-
-.packages{
-grid-template-columns:repeat(2,1fr);
-}
-
-#player{
-height:250px;
-}
-
-}
-
-</style>
-
+        .footer {
+            margin-top: 40px;
+            color: #777;
+            font-size: 13px;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="header">
+    <div class="container">
 
-<a href="go:tlk" class="telegram-btn">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
-</a>
+        <!-- صورة التطبيق -->
+        <img
+            class="app-image"
+            src="https://f.top4top.io/p_3844z8k6b1.jpg"
+            alt="NightRage TV"
+        >
 
-<div class="brand">
-<img src="https://c.top4top.io/p_3814jvtce1.jpg">
-<span>NightRage TV</span>
-</div>
+        <!-- اسم التطبيق -->
+        <div class="app-name">
+            NightRage TV
+        </div>
 
-</div>
+        <!-- تحميل التطبيق -->
+        <a
+            class="download-box"
+            href="https://www.mediafire.com/file/jfwcee0e3dljfdg/NightRageTV.apk/file"
+            target="_blank"
+        >
+            ⬇️ تحميل التطبيق
+            <span>NightRage TV APK</span>
+        </a>
 
-<div class="packages">
+        <!-- تحميل المشغل -->
+        <a
+            class="download-box"
+            href="https://play.google.com/store/apps/details?id=com.xpola.player"
+            target="_blank"
+        >
+            ▶️ تحميل المشغل
+            <span>XPola Player</span>
+        </a>
 
-<div class="package-card"
-onclick="openChannel(
-'Bein Max1',
-'http://specialdn.com/live/044yyz92zk/w19okz06h8/1389624.ts',
-'http://specialdn.com/live/044yyz92zk/w19okz06h8/1389606.ts',
-'http://specialdn.com/live/044yyz92zk/w19okz06h8/1389612.ts',
-'http://specialdn.com/live/044yyz92zk/w19okz06h8/1389618.ts'
-)">
-<img src="https://h.top4top.io/p_3822tssjh1.jpg">
-<h4>Bein Max1</h4>
-</div>
+        <!-- قناة التلكرام -->
+        <a
+            class="download-box"
+            href="https://t.me/NightRageTV"
+            target="_blank"
+        >
+             قناة التلكرام
+            <span>انضم إلى قناة NightRage TV</span>
+        </a>
 
-</div>
+        <div class="footer">
+            © 2026 NightRage TV
+        </div>
 
-<div id="playerBox">
-
-<h2 id="channelName"></h2>
-
-<select id="serverSelect">
-
-<option value="0">Server 1</option>
-<option value="1">Server 2</option>
-<option value="2">Server 3</option>
-<option value="3">Server 4</option>
-
-</select>
-
-<div id="player"></div>
-
-<button class="closeBtn"
-onclick="closePlayer()">
-إغلاق المشغل
-</button>
-
-</div>
-
-<script>
-
-let servers=[];
-let player;
-
-function loadVideo(url){
-
-document.getElementById("player").innerHTML="";
-
-player=new Playerjs({
-id:"player",
-file:url,
-autoplay:1
-});
-
-}
-
-function openChannel(name,s1,s2,s3,s4){
-
-document.getElementById("playerBox").style.display="block";
-
-document.getElementById("channelName").innerHTML=name;
-
-servers=[s1,s2,s3,s4];
-
-loadVideo(s1);
-
-}
-
-document.getElementById("serverSelect").addEventListener("change",function(){
-
-loadVideo(servers[this.value]);
-
-});
-
-function closePlayer(){
-
-document.getElementById("playerBox").style.display="none";
-
-document.getElementById("player").innerHTML="";
-
-}
-
-</script>
+    </div>
 
 </body>
 </html>
